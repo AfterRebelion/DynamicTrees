@@ -76,7 +76,7 @@ public class TreeOak extends TreeFamilyVanilla {
 	public class SpeciesSwampOak extends Species {
 				
 		SpeciesSwampOak(TreeFamily treeFamily) {
-			super(new ResourceLocation(treeFamily.getName().getResourceDomain(), treeFamily.getName().getResourcePath() + "swamp"), treeFamily);
+			super(new ResourceLocation(treeFamily.getName().getNamespace(), treeFamily.getName().getPath() + "swamp"), treeFamily);
 			
 			setBasicGrowingParameters(0.3f, 12.0f, upProbability, lowestBranchHeight, 0.8f);
 			
@@ -145,7 +145,7 @@ public class TreeOak extends TreeFamilyVanilla {
 		private static final String speciesName = "apple";
 		
 		public SpeciesAppleOak(TreeFamily treeFamily) {
-			super(new ResourceLocation(treeFamily.getName().getResourceDomain(), speciesName), treeFamily);
+			super(new ResourceLocation(treeFamily.getName().getNamespace(), speciesName), treeFamily);
 			
 			setRequiresTileEntity(true);
 			

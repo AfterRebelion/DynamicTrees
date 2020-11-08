@@ -65,7 +65,7 @@ public class BlockTrunkShell extends Block {
 		super(Material.WOOD);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(COREDIR, Surround.S));
 		setRegistryName(name);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 	}
 	
 	///////////////////////////////////////////
@@ -320,7 +320,7 @@ public class BlockTrunkShell extends Block {
 	}
 	
 	@Override
-	public EnumPushReaction getMobilityFlag(IBlockState state) {
+	public EnumPushReaction getPushReaction(IBlockState state) {
 		return EnumPushReaction.BLOCK;
 	}
 	

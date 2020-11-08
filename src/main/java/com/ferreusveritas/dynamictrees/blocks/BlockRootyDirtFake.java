@@ -37,7 +37,7 @@ public class BlockRootyDirtFake extends Block implements ITreePart, IMimic {
 		super(Material.GROUND);
 		setSoundType(SoundType.GROUND);
 		setTickRandomly(true);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(ModTabs.dynamicTreesTab);
 	}
@@ -127,7 +127,7 @@ public class BlockRootyDirtFake extends Block implements ITreePart, IMimic {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
+	public BlockRenderLayer getRenderLayer() {
 		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 	

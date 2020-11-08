@@ -1,7 +1,7 @@
 buildscript {
 	repositories {
 		jcenter()
-		maven { url = "http://files.minecraftforge.net/maven" }
+		maven { url = "https://files.minecraftforge.net/maven" }
 	}
 	dependencies {
 		classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -57,6 +57,7 @@ minecraft {
 
 dependencies {
     compile "mcp.mobius.waila:Hwyla:1.8.26-B41_1.12.2"
+    compile "sereneseasons:SereneSeasons:1.12.2-1.2.18"
 }
 
 processResources {

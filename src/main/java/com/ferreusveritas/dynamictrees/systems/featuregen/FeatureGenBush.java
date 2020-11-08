@@ -69,7 +69,7 @@ public class FeatureGenBush implements IFullGenFeature, IPostGenFeature {
 	protected void commonGen(World world, BlockPos rootPos, Species species, Random random, int radius, SafeChunkBounds safeBounds) {
 		if (radius <= 2) return;
 		
-		Vec3d vTree = new Vec3d(rootPos).addVector(0.5, 0.5, 0.5);
+		Vec3d vTree = new Vec3d(rootPos).add(0.5, 0.5, 0.5);
 		
 		for (int i = 0; i < 2; i++) {
 			int rad = MathHelper.clamp(world.rand.nextInt(radius - 2) + 2, 2, radius - 1);

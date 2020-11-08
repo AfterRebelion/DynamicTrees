@@ -29,7 +29,7 @@ public class ChunkTreeHelper {
 			return;
 		}
 		
-		Chunk chunk = world.getChunkFromChunkCoords(cPos.x, cPos.z);
+		Chunk chunk = world.getChunk(cPos.x, cPos.z);
 		BlockBounds bounds = new BlockBounds(cPos);
 		
 		bounds.shrink(EnumFacing.UP, 255 - (chunk.getTopFilledSegment() + 16));
@@ -86,7 +86,7 @@ public class ChunkTreeHelper {
 			return;
 		}
 		
-		Chunk chunk = world.getChunkFromChunkCoords(cPos.x, cPos.z);
+		Chunk chunk = world.getChunk(cPos.x, cPos.z);
 		BlockBounds bounds = new BlockBounds(cPos);
 		
 		bounds.shrink(EnumFacing.UP, 255 - (chunk.getTopFilledSegment() + 16));

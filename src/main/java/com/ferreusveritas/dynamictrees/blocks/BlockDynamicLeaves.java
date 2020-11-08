@@ -78,7 +78,7 @@ public class BlockDynamicLeaves extends BlockLeaves implements ITreePart, IAgeab
 	
 	public Block setDefaultNaming(String modid, String name) {
 		setRegistryName(modid, name);
-		setUnlocalizedName(getRegistryName().toString());
+		setTranslationKey(getRegistryName().toString());
 		return this;
 	}
 	
@@ -316,9 +316,9 @@ public class BlockDynamicLeaves extends BlockLeaves implements ITreePart, IAgeab
 	}
 	
 	@Override
-	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 		if(entity instanceof EntityItem || passableLeavesModLoaded || ModConfigs.vanillaLeavesCollision) {
-			super.onEntityCollidedWithBlock(world, pos, state, entity);
+			super.onEntityCollision(world, pos, state, entity);
 		} 
 		else {
 			if (entity.motionY < 0.0D && entity.fallDistance < 2.0f) {
@@ -679,7 +679,7 @@ public class BlockDynamicLeaves extends BlockLeaves implements ITreePart, IAgeab
 	}
 	
 	@Override
-	public EnumPushReaction getMobilityFlag(IBlockState state) {
+	public EnumPushReaction getPushReaction(IBlockState state) {
 		return EnumPushReaction.DESTROY;
 	}
 	
@@ -695,8 +695,8 @@ public class BlockDynamicLeaves extends BlockLeaves implements ITreePart, IAgeab
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
-		return Blocks.LEAVES.getBlockLayer();
+	public BlockRenderLayer getRenderLayer() {
+		return Blocks.LEAVES.getRenderLayer();
 	}
 	
 	@Override

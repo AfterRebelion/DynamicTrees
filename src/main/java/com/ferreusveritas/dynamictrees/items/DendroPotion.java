@@ -90,7 +90,7 @@ public class DendroPotion extends Item implements ISubstanceEffectProvider, IEmp
 	
 	public DendroPotion(String name) {
 		setRegistryName(name);
-		setUnlocalizedName(getRegistryName().toString());
+		setTranslationKey(getRegistryName().toString());
 		setMaxStackSize(1);
 		setHasSubtypes(true);
 		setCreativeTab(ModTabs.dynamicTreesTab);
@@ -108,8 +108,8 @@ public class DendroPotion extends Item implements ISubstanceEffectProvider, IEmp
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
-		return super.getUnlocalizedName() + "." + getPotionType(stack).getName();
+	public String getTranslationKey(ItemStack stack) {
+		return super.getTranslationKey() + "." + getPotionType(stack).getName();
 	}
 	
 	public DendroPotionType getPotionTypeForDamage(int damage) {
@@ -213,7 +213,7 @@ public class DendroPotion extends Item implements ISubstanceEffectProvider, IEmp
 			if(species == null) {
 				tooltip.add(getPotionType(stack).getLore());
 			} else {
-				tooltip.add("Transform a tree into a " + species.getRegistryName().getResourcePath() + " tree");
+				tooltip.add("Transform a tree into a " + species.getRegistryName().getPath() + " tree");
 			}
 		} else {
 			tooltip.add(getPotionType(stack).getLore());

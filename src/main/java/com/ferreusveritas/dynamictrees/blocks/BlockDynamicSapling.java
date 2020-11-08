@@ -52,7 +52,7 @@ public class BlockDynamicSapling extends Block implements ITileEntityProvider, I
 		setDefaultState(this.blockState.getBaseState());
 		setSoundType(SoundType.PLANT);
 		setTickRandomly(true);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setRegistryName(name);
 		
 		hasTileEntity = true;
@@ -276,7 +276,7 @@ public class BlockDynamicSapling extends Block implements ITileEntityProvider, I
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
+	public BlockRenderLayer getRenderLayer() {
 		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 	
