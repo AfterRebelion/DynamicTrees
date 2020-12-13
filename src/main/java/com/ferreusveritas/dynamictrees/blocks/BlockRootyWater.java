@@ -184,7 +184,7 @@ public class BlockRootyWater extends BlockRooty {
 	
 	private boolean canFlowInto(World worldIn, BlockPos pos, IBlockState state) {
 		Material material = state.getMaterial();
-		return material != this.blockMaterial && material != Material.LAVA && !this.isBlocked(worldIn, pos, state);
+		return material != this.material && material != Material.LAVA && !this.isBlocked(worldIn, pos, state);
 	}
 	
 	private boolean isBlocked(World worldIn, BlockPos pos, IBlockState state) {
@@ -267,7 +267,7 @@ public class BlockRootyWater extends BlockRooty {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
+	public BlockRenderLayer getRenderLayer() {
 		return BlockRenderLayer.TRANSLUCENT;
 	}
 	

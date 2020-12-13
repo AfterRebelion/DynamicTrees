@@ -42,7 +42,7 @@ public class Seed extends Item {
 	
 	public Seed(String name) {
 		setRegistryName(name);
-		setUnlocalizedName(getRegistryName().toString());
+		setTranslationKey(getRegistryName().toString());
 		setCreativeTab(ModTabs.dynamicTreesTab);
 	}
 	

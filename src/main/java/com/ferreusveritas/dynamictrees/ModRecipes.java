@@ -57,8 +57,8 @@ public class ModRecipes {
 	}
 	public static void createDirtBucketExchangeRecipes(ItemStack saplingStack, ItemStack seedStack, boolean seedIsSapling, String suffix, ResourceLocation species) {
 		if(!saplingStack.isEmpty() && !seedStack.isEmpty()) {
-			String speciesPath = species.getResourcePath();
-			String speciesDomain = species.getResourceDomain();
+			String speciesPath = species.getPath();
+			String speciesDomain = species.getNamespace();
 			
 			//Create a seed from a sapling and dirt bucket
 			GameRegistry.addShapelessRecipe(
@@ -101,24 +101,24 @@ public class ModRecipes {
 			if (!requiresBonemeal) {
 				//Creates a seed from fruit
 				GameRegistry.addShapelessRecipe(
-						new ResourceLocation(species.getResourceDomain(), species.getResourcePath() + "seedfromfruit"),
+						new ResourceLocation(species.getNamespace(), species.getPath() + "seedfromfruit"),
 						null,
 						seedStack,
 						Ingredient.fromStacks(fruitStack));
 				//Creates a sapling from fruit and a dirt bucket
 				if (seedIsSapling) {
 					GameRegistry.addShapelessRecipe(
-							new ResourceLocation(species.getResourceDomain(), species.getResourcePath() + "saplingfromfruit"),
+							new ResourceLocation(species.getNamespace(), species.getPath() + "saplingfromfruit"),
 							null,
 							saplingStack,
 							Ingredient.fromStacks(fruitStack),
-							Ingredient.fromItem(com.ferreusveritas.dynamictrees.ModItems.dirtBucket));
+							Ingredient.fromItem(ModItems.dirtBucket));
 				}
 			} else {
 				ItemStack bonemeal = new ItemStack(Items.DYE, 1, 15);
 				//Creates a seed from fruit using bonemeal
 				GameRegistry.addShapelessRecipe(
-						new ResourceLocation(species.getResourceDomain(), species.getResourcePath() + "seedfromfruitgerminate"),
+						new ResourceLocation(species.getNamespace(), species.getPath() + "seedfromfruitgerminate"),
 						null,
 						seedStack,
 						Ingredient.fromStacks(fruitStack),
@@ -126,7 +126,7 @@ public class ModRecipes {
 				//Creates a sapling from fruit and a dirt bucket using bonemeal
 				if (seedIsSapling) {
 					GameRegistry.addShapelessRecipe(
-							new ResourceLocation(species.getResourceDomain(), species.getResourcePath() + "saplingfromfruit"),
+							new ResourceLocation(species.getNamespace(), species.getPath() + "saplingfromfruit"),
 							null,
 							saplingStack,
 							Ingredient.fromStacks(fruitStack),

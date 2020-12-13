@@ -338,7 +338,7 @@ public class Species extends net.minecraftforge.registries.IForgeRegistryEntry.I
 	 * in the appropriate registries.
 	 */
 	public Species generateSeed() {
-		Seed seed = new Seed(getRegistryName().getResourcePath() + "seed");
+		Seed seed = new Seed(getRegistryName().getPath() + "seed");
 		setSeedStack(new ItemStack(seed));
 		return this;
 	}
@@ -921,7 +921,7 @@ public class Species extends net.minecraftforge.registries.IForgeRegistryEntry.I
 		
 		//Select a direction from the probability map
 		int choice = com.ferreusveritas.dynamictrees.util.MathHelper.selectRandomFromDistribution(signal.rand, probMap);//Select a direction from the probability map
-		return newDirectionSelected(EnumFacing.getFront(choice != -1 ? choice : 1), signal);//Default to up if things are screwy
+		return newDirectionSelected(EnumFacing.byIndex(choice != -1 ? choice : 1), signal);//Default to up if things are screwy
 	}
 	
 	/** Species can override the probability map here **/
@@ -1308,7 +1308,7 @@ public class Species extends net.minecraftforge.registries.IForgeRegistryEntry.I
 	 * A {@link JoCode} defines the block model of the {@link TreeFamily}
 	 */
 	public void addJoCodes() {
-		joCodeStore.addCodesFromFile(this, "assets/" + getRegistryName().getResourceDomain() + "/trees/"+ getRegistryName().getResourcePath() + ".txt");
+		joCodeStore.addCodesFromFile(this, "assets/" + getRegistryName().getNamespace() + "/trees/"+ getRegistryName().getPath() + ".txt");
 	}
 	
 	public Species addGenFeature(IGenFeature module) {
